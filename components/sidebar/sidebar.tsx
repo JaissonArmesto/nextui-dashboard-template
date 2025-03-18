@@ -19,6 +19,7 @@ import { FilterIcon } from "../icons/sidebar/filter-icon";
 import { useSidebarContext } from "../layout/layout-context";
 import { ChangeLogIcon } from "../icons/sidebar/changelog-icon";
 import { usePathname } from "next/navigation";
+import { Calendar } from 'lucide-react';
 
 export const SidebarWrapper = () => {
   const pathname = usePathname();
@@ -51,6 +52,12 @@ export const SidebarWrapper = () => {
                 title="Accounts"
                 icon={<AccountsIcon />}
                 href="accounts"
+              />
+              <SidebarItem
+                isActive={pathname === "/schedule"}
+                title="Schedule"
+                icon={<Calendar />}
+                href="schedule"
               />
               <SidebarItem
                 isActive={pathname === "/payments"}
